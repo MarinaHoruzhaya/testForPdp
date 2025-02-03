@@ -1,5 +1,6 @@
 package seleniumTests;
 
+import jdk.jfr.Description;
 import org.example.Pages.*;
 
 import org.junit.jupiter.api.*;
@@ -16,6 +17,7 @@ public class SeleniumDevTest extends BaseTest {
     private final static String sponsors = "OpenCollective Sponsors ";
 
     @BeforeEach
+
     public void createPages() {
         webDriverPage = new WebDriverPage(driver);
         mainPage = new MainPage(driver);
@@ -24,6 +26,7 @@ public class SeleniumDevTest extends BaseTest {
         sponsorsPage = new SponsorsPage(driver);
     }
 
+    @Description("успешный тест 1")
     @Test
     @Order(1)
     public void testWebDriver() {
@@ -34,6 +37,7 @@ public class SeleniumDevTest extends BaseTest {
         assertEquals("Getting started", webDriverPage.getTextOfTitle());
     }
 
+    @Description("Успешный тест 2")
     @Test
     @Order(3)
     public void seleniumGrid() {
@@ -44,6 +48,7 @@ public class SeleniumDevTest extends BaseTest {
         assertEquals("Instructions for a simple Selenium Grid", seleniumGridPage.getTextTitleGrid());
     }
 
+    @Description("упавший тест 1")
     @Test
     @Order(2)
     public void checkOpenCollectiveSponsors() {
@@ -54,6 +59,7 @@ public class SeleniumDevTest extends BaseTest {
     }
 
     @Disabled
+    @Description("отключенный тест")
     @Test
     @Order(4)
     public void changeLanguage() {
