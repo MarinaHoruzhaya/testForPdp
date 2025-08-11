@@ -17,7 +17,6 @@ public class SeleniumDevTest extends BaseTest {
     private final static String sponsors = "OpenCollective Sponsors ";
 
     @BeforeEach
-
     public void createPages() {
         webDriverPage = new WebDriverPage(driver);
         mainPage = new MainPage(driver);
