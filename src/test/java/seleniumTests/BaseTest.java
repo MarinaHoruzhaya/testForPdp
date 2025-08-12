@@ -18,7 +18,7 @@ public class BaseTest {
         options.addArguments("--user-data-dir=" + System.getProperty("java.io.tmpdir") + "/chrome-profile-" + UUID.randomUUID());
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-       // options.addArguments("--headless=new"); // для запуска в headless-режиме
+        options.addArguments("--headless=new"); // для запуска в headless-режиме
         options.addArguments("--remote-allow-origins=*"); // для совместимости
 
         WebDriverManager.chromedriver().setup();
