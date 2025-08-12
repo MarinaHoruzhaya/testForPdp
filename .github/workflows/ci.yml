@@ -30,6 +30,10 @@ jobs:
         run: mvn allure:report
         continue-on-error: true
 
+      - name: Check Allure report
+        run: ls -R target/site/allure-maven-plugin
+        if: always()
+
       - name: Check Allure results
         run: ls -R target/allure-results
         if: always()
