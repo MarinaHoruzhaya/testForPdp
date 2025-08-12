@@ -18,26 +18,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Maven
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          maven-version: '3.8.6'
-
-      - name: Build with Maven
-        run: mvn clean compile
-
       - name: Run Tests
         run: mvn test
-
-      - name: Generate Allure Report (with debug)
-        run: mvn allure:report -X
         continue-on-error: true
 
-      - name: List target/site
-        run: ls -R target/site
-        if: always()
+      - name: Generate Allure Report (with debug)
+        run: mvn allure:report
+        continue-on-error: true
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
