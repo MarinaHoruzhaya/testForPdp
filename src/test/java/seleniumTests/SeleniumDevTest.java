@@ -14,7 +14,7 @@ public class SeleniumDevTest extends BaseTest {
     private SeleniumGridPage seleniumGridPage;
     private DocumentationPage documentationPage;
     private SponsorsPage sponsorsPage;
-    private final static String sponsors = "OpenCollective Sponsors ";
+    private final static String sponsors = "OpenCollective Sponsors";
 
     @BeforeEach
     public void createPages() {
