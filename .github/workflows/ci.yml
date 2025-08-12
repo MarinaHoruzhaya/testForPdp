@@ -22,9 +22,17 @@ jobs:
         run: mvn test
         continue-on-error: true
 
+      - name: Check test results
+        run: ls -R target/surefire-reports
+        if: always()
+
       - name: Generate Allure Report (with debug)
         run: mvn allure:report
         continue-on-error: true
+
+      - name: Check Allure results
+        run: ls -R target/allure-results
+        if: always()
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
